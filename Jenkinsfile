@@ -14,16 +14,12 @@ agent any
   } 
   stage("Build"){
    steps{
-    dir("java-maven-app"){ 
      sh "mvn clean package"
-    }
    } 
   }
   stage("Test"){
-   steps{ 
-    dir("java-maven-app"){
+   steps{
      sh "mvn test"
-    } 
    }
   } 
  }
